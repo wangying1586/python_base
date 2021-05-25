@@ -5,7 +5,59 @@
 控制流程：顺序语句、循环语句for、while、分支语句if
 输入和输出：input、eval、print、formate
 程序格式：缩进、注释
-
 """
 
+# 数据类型
+Python保留字：and、as、assert、break、class、continue、def、del、elif、else、except、False、finally、for、from、global、if、import
+in、is、lambda、None、nonlocal、not、or、pass、raise、return、True、try、while、with、yield
 
+数据元素+外部输入到控制语句－>输出
+
+变量命名规则：
+【1】字母、数字、汉字、下划线以及组合
+【2】严格区分大小写
+【3】尽量具备实际意义
+【4】首字母不能为数字
+【5】中间不能有空格
+【6】不能是Python保留字
+
+格式化输出："字符{0:修饰}字符{1:修饰}".format(v1,v2)
+
+基础数据类型－－－－－－－－－－－－－－
+【1】数字类型：分类int、float、complex，操作符+－*/%//**，操作函数abs()、max()...
+【2】字符串类型：基本性质索引、切片，操作符+*in，操作函数len()、count()...
+【3】布尔类型：逻辑运算and、or、not
+【4】类型转换：类型判断type()、isinstance()，类型转换str(),int()...
+
+继承－－－类和实例
+
+[1]数字类型
+整数－进制的转换
+浮点数－运算可存在不确定小数
+复数
+运算操作符－加减乘除，整数商、模运算，除法－结果浮点数
+数字操作函数－四舍五入round、最大最小maxmain、绝对值abs、求和sum、幂次方pow、divmod、借助math包
+
+[2]字符串类型
+表达－或、转义符\
+索引－正向从0开始、反向从－1开始
+切片－s[a:b]不包含b
+a in b－a是否是b的子集
+拼接和复制－:"py"+"thon","mn"*2
+处理函数－长度len、统计count、字母大小写upper/lower/letter、替换replace、删除strip、分割split、组合join
+
+[3]布尔类型
+True False、逻辑运算、作为循环的指示、numpy pandas掩码
+[4]类型判别和转换
+类型判别：type isinstance
+字符串检查函数：isdigit、isalpha、isalnum
+类别转换：str、int、float
+
+
+# 变量
+
+# 控制流程
+
+# 输入输出
+
+# 程序格式
