@@ -211,33 +211,3 @@ len(stars)
 # 【4】集合的遍历-借助for循环
 for star in stars:
     print(star)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
