@@ -7,6 +7,7 @@
 程序格式：缩进、注释
 """
 
+"""
 # 数据类型
 Python保留字：and、as、assert、break、class、continue、def、del、elif、else、except、False、finally、for、from、global、if、import
 in、is、lambda、None、nonlocal、not、or、pass、raise、return、True、try、while、with、yield
@@ -22,7 +23,9 @@ in、is、lambda、None、nonlocal、not、or、pass、raise、return、True、t
 【6】不能是Python保留字
 
 格式化输出："字符{0:修饰}字符{1:修饰}".format(v1,v2)
+"""
 
+"""
 基础数据类型－－－－－－－－－－－－－－
 【1】数字类型：分类int、float、complex，操作符+－*/%//**，操作函数abs()、max()...
 【2】字符串类型：基本性质索引、切片，操作符+*in，操作函数len()、count()...
@@ -32,9 +35,9 @@ in、is、lambda、None、nonlocal、not、or、pass、raise、return、True、t
 继承－－－类和实例
 
 [1]数字类型
-整数－进制的转换
-浮点数－运算可存在不确定小数
-复数
+int整数－进制的转换-----2
+float浮点数－运算可存在不确定小数-------2.0 
+complex复数------ 3+4j
 运算操作符－加减乘除，整数商、模运算，除法－结果浮点数
 数字操作函数－四舍五入round、最大最小maxmain、绝对值abs、求和sum、幂次方pow、divmod、借助math包
 
@@ -52,12 +55,36 @@ True False、逻辑运算、作为循环的指示、numpy pandas掩码
 类型判别：type isinstance
 字符串检查函数：isdigit、isalpha、isalnum
 类别转换：str、int、float
+"""
 
+"""
+组合数据类型－－－－－－－－－－－－－－
+list列表-----数据有位置顺序  a = [1,2,3,4]    a[0]
+tuple元组----元素不支持修改（不可变列表）  b = (1,2,3,4)  b[0]
+dict字典-----通过键值实现数据存储和查找    stu = {201901:"小明",201902:"小强"}  stu[201901]
+set集合------一系列互不相等元素的集合，无序  s = {"小明","小红","小强"} s
+"""
 
+"""
 # 变量
+x = eval(input("请输入一个数字：")) --- eval去掉引号   
 
-# 控制流程
+# 输出控制
+print(123, end=" ") end控制不换行
 
-# 输入输出
+print("PI = {0},E = {1}".format(PI, E))
 
-# 程序格式
+# ____3.1415926_____  进行填充
+print("{0:_^20}".format(PI))
+# 3.1415926*********************
+print("{0:*<30}".format(PI))
+# 10,000,000
+print("{0:,}".format(10000000))
+# 保留2位小数
+print("{0:.2f}".format(PI))
+# '二进制111000010,Unicode码ǂ,十进制450,八进制702,十六进制1c2'
+"二进制{0:b},Unicode码{0:c},十进制{0:d},八进制{0:o},十六进制{0:x}".format(450)
+
+"""
+
+
