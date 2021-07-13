@@ -60,12 +60,35 @@ time.strftime("%Y-%m-%d %A %H:%M:%S", lctime)
 #（1）time.sleep()
 
 # 10.2 random库
+# 随机种子------seed  （1）相同种子会产生相同的随机数 （2）如果不设置随机种子，以系统当前时间为默认值
+from random import *
+seed(10)
+print(random())  # 0.5714025946899135
+# 产生随机整数
+numbers = [randint(1, 10) for i in range(10)]  # 产生[a,b]的随机整数
+numbers = [randrange(10) for i in range(10)]  # 产生[0, a)的随机整数
+numbers = [randrange(0, 10, 2) for i in range(10)]  # 产生[a,b]以step步长的随机整数
 
+# 产生随机浮点数
+numbers = [random() for i in range(10)]    # 产生[0.0, 1.0)之间随机浮点数
+numbers = [uniform(2.1, 3.5) for i in range(10)]    # 产生[a,b]间随机浮点数
 
+# 序列用函数
+choice(["win", "lose", "draw"])  # 从序列中随机返回一个元素
+choice("python"]  # h
+choices(["win", "lose", "draw"], [3, 3, 4], k=5) # k次重复采样，可设置权重
+shuffle()  # 打乱序列
+sample([10, 20, 30, 40, 50], k=3)  # 从pop类型中随机选取k个元素，以列表类型返回
 
+       
+# 5.概率分布-以高斯分布为例
+gauss(mean, std)  #产生一个符合高斯分布的随机数
+import matplotlib.pyplot as plt
+res = [gauss(0, 1) for i in range(10000)]
+plt.hist(res, bins=1000)
+plt.show()
 
-
-
+# example 1: random实现微信红包分配
 
 
 
