@@ -12,11 +12,12 @@ t_UTC = time.gmtime()
 print("t_local", t_local)           # 本地时间
 print("t_UTC", t_UTC)               # UTC统一时间
 """
-t_local time.struct_time(tm_year=2019, tm_mon=8, tm_mday=29, tm_hour=16, tm_min=43, tm_sec=37, tm_wday=3, tm_yday=241, tm_isdst=0)
-t_UTC time.struct_time(tm_year=2019, tm_mon=8, tm_mday=29, tm_hour=8, tm_min=43, tm_sec=37, tm_wday=3, tm_yday=241, tm_isdst=0)
+t_local time.struct_time(tm_year=2021, tm_mon=7, tm_mday=26, tm_hour=10, tm_min=17, tm_sec=15, tm_wday=0, tm_yday=207, tm_isdst=0)
+t_UTC time.struct_time(tm_year=2021, tm_mon=7, tm_mday=26, tm_hour=2, tm_min=17, tm_sec=15, tm_wday=0, tm_yday=207, tm_isdst=0)
 """
 time.ctime()                        # 返回本地时间的字符串
-# 'Thu Aug 29 16:44:52 2019'
+# 'Mon Jul 26 10:18:25 2021'
+
 
 # 2.时间戳与计时器
 """
@@ -54,7 +55,8 @@ process_time方法：0.156秒
 #（1）time.strftime 自定义格式化输出
 lctime = time.localtime()
 time.strftime("%Y-%m-%d %A %H:%M:%S", lctime)
-# '2019-08-29 Thursday 16:54:35'
+# '2021-07-26 Monday 10:18:54'
+
 
 # 4.睡觉觉
 #（1）time.sleep()
@@ -89,15 +91,53 @@ plt.hist(res, bins=1000)
 plt.show()
 
 # example 1: random实现微信红包分配
+# 数学期望(mean)是试验中每次可能结果的概率乘以其结果的总和，是最基本的数学特征之一。
+# 它反映随机变量平均取值的大小
+import random
+import numpy as np
 
+def red_packet(total, num):
+    ls = []
+    for i in range(1, num):
+        # 当前红包金额为0.01-平均值的2倍之间
+        per = random.uniform(0.01, total / (num - i + 1) * 2)
+        total = total - per
+red_pecket(10, 5)
+       
+# example 2: 生成4位由数字和英文字母构成的验证码
+import random
+import string
+       
+s = string.digits + string.ascii_letters
+v = random.sample(s, 4)
 
+ 
+# 10.3 collections库----容器数据类型
+import collections
+# collections.namedtuple(typename, field_names, *, rename=False, defaults=None, module=None)
+Point = collections.namedtuple("Point", ["x", "y"])
+p = Point(1, y=2)
+# 可调用属性，且有元组的属性
+p.x, p.y
+x, y = p
+print(isinstance(p, tuple))  # 是元组子类
 
+# example：模拟扑克牌
+Card = collections.namedtuple("Card", ["rank", "suit"])
+ranks = [str(n) for n in range(2, 11)] + list("JQKA")
+suits = "spades diamonds clubs hearts".split()
+cards = [Card(rank, suit) for rank in ranks
+                          for suit in suits]
+# 洗牌
+from random import *
+random.shuffle(cards)
+# 抽牌
+choice(cards)
+# 随机抽多张牌
+sample(cards, k=5)
 
-
-
-
-
-
+# 2. Counter ---- 计数器工具
+from collections import Counter
 
 
 
